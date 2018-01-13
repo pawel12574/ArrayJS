@@ -1,0 +1,34 @@
+{
+  "name": "rxjs-project",
+  "version": "1.0.0",
+  "description": "Mastering rxJS",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "temporary": "node main.js",
+    "start": "webpack-dev-server --watch --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawel12574/ArrayJS.git"
+  },
+  "keywords": [
+    "rxjs"
+  ],
+  "author": "Paweł Eliasz",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/pawel12574/ArrayJS/issues"
+  },
+  "homepage": "https://github.com/pawel12574/ArrayJS#readme",
+  "dependencies": {
+    "rxjs-es": "^5.0.0-beta.12"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
