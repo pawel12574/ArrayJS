@@ -6,101 +6,101 @@
 
 </head>
 <body>
-
+<script src="app.js"></script>
 <script>
 
-    const t2 = [
-        {name: 'Pawel', age: 32},
-        {name: 'Karol', age: 17},
-        {name: 'Tomek', age: 67},
-        {name: 'Kasia', age: 12},
-        {name: 'Ania', age: 4},
-        {name: 'Roman', age: 2}
-    ];
-
-    //nowa tablica z wszystkimi dorosłymi ludźmi
-
-    const t3 = t2.filter((element) => element.age >= 18);
-
-    //zmienna z  imionami dzieci
-    const t4 = t2.filter(element => element.age < 18).reduce((accumulator, value) => {
-        return accumulator + value.name
-    });
-
-    //tablica z imionami dzieci
-    //1. filtrowanie dzieci, 2. filtrowanie imion
-    const t5 = t2.filter(element => element.age < 18).map(element => element.name);
-
-
-    const t6 = [
-        {
-            name: 'Pawel', age: 32, favorites: [
-            'rybki', 'programowanie', 'alkohol'
-        ]
-        },
-        {
-            name: 'Karol', age: 17, favorites: [
-            'matematyka', 'grzybki', 'alkohol'
-        ]
-        },
-        {
-            name: 'Tomek', age: 67, favorites: [
-            'filmy', 'napady', 'narkotyki'
-        ]
-        },
-        {
-            name: 'Kasia', age: 12, favorites: [
-            'koty', 'gry', 'alkohol'
-        ]
-        },
-        {
-            name: 'Ania', age: 4, favorites: [
-            'rybki', 'koty', 'wolnomularstwo'
-        ]
-        },
-        {
-            name: 'Roman', age: 2, favorites: [
-            'roboty', 'niespanie', 'prace'
-        ]
-        }
-    ]
-
-    //tablica imion ludzi, ktorzy pija alkohol
-    //1. iterowanie po wszystkich obiektach
-    //2. sprawdzic, ktory element  jest tablicą
-    //3. sprawdzic czy w tablicy jest alkohol
-    //4. wypisanie ludzi, ktorzy lubia alkohol
-
-    //funckje anonimowe
-    const t7 = t6.map(function (e, index, tab) {
-        console.log('element', e);
-        let temp = e.favorites.filter(function (element) {
-            return element === 'alkohol';
-        })
-        return temp.length > 0 ? e.name : -1;
-    }).filter(function (e) {
-        return e !== -1;
-    });
-
-    //bez funkcji anonimowych
-    const t8 = t6.map(e => {
-        let temp = e.favorites.filter(e => e === 'alkohol');
-        return temp.length > 0 ? e.name : -1;
-    }).filter(e => e !== -1);
-
-    // niepełnoletni, którzy lubią rybki
-    const t9 = t6.filter(e => e.age < 18).map(e => {
-        let temp = e.favorites.filter(e => e === 'rybki');
-        return temp.length > 0 ? e : -1;
-    }).filter(e => e !== -1);
-
-
-    let tab = [];
-    for (let i = 0; i < 100; i++) {
-        tab.push(Math.random());
-    }
-    const tab2 = tab.reduce((accumulator, value) => accumulator + value);
-    let result = tab2/tab.length;
+//    const t2 = [
+//        {name: 'Pawel', age: 32},
+//        {name: 'Karol', age: 17},
+//        {name: 'Tomek', age: 67},
+//        {name: 'Kasia', age: 12},
+//        {name: 'Ania', age: 4},
+//        {name: 'Roman', age: 2}
+//    ];
+//
+//    //nowa tablica z wszystkimi dorosłymi ludźmi
+//
+//    const t3 = t2.filter((element) => element.age >= 18);
+//
+//    //zmienna z  imionami dzieci
+//    const t4 = t2.filter(element => element.age < 18).reduce((accumulator, value) => {
+//        return accumulator + value.name
+//    });
+//
+//    //tablica z imionami dzieci
+//    //1. filtrowanie dzieci, 2. filtrowanie imion
+//    const t5 = t2.filter(element => element.age < 18).map(element => element.name);
+//
+//
+//    const t6 = [
+//        {
+//            name: 'Pawel', age: 32, favorites: [
+//            'rybki', 'programowanie', 'alkohol'
+//        ]
+//        },
+//        {
+//            name: 'Karol', age: 17, favorites: [
+//            'matematyka', 'grzybki', 'alkohol'
+//        ]
+//        },
+//        {
+//            name: 'Tomek', age: 67, favorites: [
+//            'filmy', 'napady', 'narkotyki'
+//        ]
+//        },
+//        {
+//            name: 'Kasia', age: 12, favorites: [
+//            'koty', 'gry', 'alkohol'
+//        ]
+//        },
+//        {
+//            name: 'Ania', age: 4, favorites: [
+//            'rybki', 'koty', 'wolnomularstwo'
+//        ]
+//        },
+//        {
+//            name: 'Roman', age: 2, favorites: [
+//            'roboty', 'niespanie', 'prace'
+//        ]
+//        }
+//    ]
+//
+//    //tablica imion ludzi, ktorzy pija alkohol
+//    //1. iterowanie po wszystkich obiektach
+//    //2. sprawdzic, ktory element  jest tablicą
+//    //3. sprawdzic czy w tablicy jest alkohol
+//    //4. wypisanie ludzi, ktorzy lubia alkohol
+//
+//    //funckje anonimowe
+//    const t7 = t6.map(function (e, index, tab) {
+//        console.log('element', e);
+//        let temp = e.favorites.filter(function (element) {
+//            return element === 'alkohol';
+//        })
+//        return temp.length > 0 ? e.name : -1;
+//    }).filter(function (e) {
+//        return e !== -1;
+//    });
+//
+//    //bez funkcji anonimowych
+//    const t8 = t6.map(e => {
+//        let temp = e.favorites.filter(e => e === 'alkohol');
+//        return temp.length > 0 ? e.name : -1;
+//    }).filter(e => e !== -1);
+//
+//    // niepełnoletni, którzy lubią rybki
+//    const t9 = t6.filter(e => e.age < 18).map(e => {
+//        let temp = e.favorites.filter(e => e === 'rybki');
+//        return temp.length > 0 ? e : -1;
+//    }).filter(e => e !== -1);
+//
+//
+//    let tab = [];
+//    for (let i = 0; i < 100; i++) {
+//        tab.push(Math.random());
+//    }
+//    const tab2 = tab.reduce((accumulator, value) => accumulator + value);
+//    let result = tab2/tab.length;
 
 </script>
 </body>

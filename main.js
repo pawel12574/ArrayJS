@@ -1,0 +1,1 @@
+console.log('dzialam bez przegladarki');
