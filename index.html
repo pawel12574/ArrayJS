@@ -9,18 +9,77 @@
 
 <script>
 
-    const t = [[1, 2, 3], [1, 2, 3], [1, 2, 3]];
-//    const t2 = t.map((element) => element.reverse());
+    const t2 = [
+        {name: 'Pawel', age: 32},
+        {name: 'Karol', age: 17},
+        {name: 'Tomek', age: 67},
+        {name: 'Kasia', age: 12},
+        {name: 'Ania', age: 4},
+        {name: 'Roman', age: 2}
+    ];
+
+    //nowa tablica z wszystkimi dorosłymi ludźmi
+
+    const t3 = t2.filter((element) => element.age >= 18);
+
+    //zmienna z  imionami dzieci
+    const t4 = t2.filter(element => element.age < 18).reduce((accumulator, value) => {
+        return accumulator + value.name
+    });
+
+    //tablica z imionami dzieci
+    //1. filtrowanie dzieci, 2. filtrowanie imion
+    const t5 = t2.filter(element => element.age < 18).map(element => element.name);
 
 
-    //1. iterujemy po tablicy głównej, zeby dostac sie do elementów
-    //2. elementy są tablicami wiec je odwracamy funkcja reverse
-    const t2 = t.map((element) => element.reverse());
-    const t3 = t.map((element) => element.reverse().join('-')).join('-');
+    const t6 = [
+        {
+            name: 'Pawel', age: 32, favorites: [
+            'rybki', 'programowanie', 'alkohol'
+        ]
+        },
+        {
+            name: 'Karol', age: 17, favorites: [
+            'matematyka', 'grzybki', 'alkohol'
+        ]
+        },
+        {
+            name: 'Tomek', age: 67, favorites: [
+            'filmy', 'napady', 'narkotyki'
+        ]
+        },
+        {
+            name: 'Kasia', age: 12, favorites: [
+            'koty', 'gry', 'alkohol'
+        ]
+        },
+        {
+            name: 'Ania', age: 4, favorites: [
+            'rybki', 'koty', 'wolnomularstwo'
+        ]
+        },
+        {
+            name: 'Roman', age: 2, favorites: [
+            'roboty', 'niespanie', 'prace'
+        ]
+        }
+    ]
 
-    const t3= t.map(function (e){
-        return e.reverse().join('-');
-    }).join('-');
+    //tablica imion ludzi, ktorzy pija alkohol
+    //1. iterowanie po wszystkich obiektach
+    //2. sprawdzic, ktory element  jest tablicą
+    //3. sprawdzic czy w tablicy jest alkohol
+    //4. wypisanie ludzi, ktorzy lubia alkohol
+
+    const t7 = t6.map(function (e, index, tab) {
+        console.log('element', e);
+        let temp = e.favorites.filter(function (element) {
+            return element === 'alkohol';
+        })
+        return temp.length > 0 ? e.name: -1;
+    }).filter(function (e) {
+        return e !==-1;
+    });
 
 </script>
 </body>
