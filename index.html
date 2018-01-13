@@ -8,31 +8,17 @@
 <body>
 
 <script>
-    //zrby sprawdzic funkcje jakie moge wykonac, trzeba spradzic
-    // wlasnosc obiekt.__proto__;
+
     const tab = [1, 2, 3, 4, 5];
-    //  const tab2 = tab.reverse();
-    //funkcjatab pozwal mapowac dowolna tablica na nowa
-    const tab3 = tab.map(function (element, index, tab) {
-        return element + index * 10;
+    const tab7 = tab.reduce((accumulator, currentValue) => {
+        console.log('accumulator', accumulator);
+        console.log('current value', currentValue);
+        return accumulator + currentValue;
     });
 
-    const tab4 = tab.map((element, index) => {
-        return element * 10
-    });
+    const tab8 = tab.reduce((accumulator, currentValue) => {accumulator + currentValue });
+    //chce nową zmienną w ktorej bedzie suma nowych elementów;
 
-    const tab5 = tab.map(element => element * 10);// to jest ok, bo jest czytelne
-
-    const tab6 = tab.map(e => e * 10);
-
-    //    (parametry)=> {
-    //        //ciało funkcji
-    //    }
-    //    marametr => {
-    //        //ciało funkcji
-    //    }
-    //
-    //    parametry => true;
 
 </script>
 </body>
