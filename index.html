@@ -77,22 +77,30 @@
         let temp = e.favorites.filter(function (element) {
             return element === 'alkohol';
         })
-        return temp.length > 0 ? e.name: -1;
+        return temp.length > 0 ? e.name : -1;
     }).filter(function (e) {
-        return e !==-1;
+        return e !== -1;
     });
 
     //bez funkcji anonimowych
     const t8 = t6.map(e => {
-        let temp = e.favorites.filter(e => e==='alkohol');
+        let temp = e.favorites.filter(e => e === 'alkohol');
         return temp.length > 0 ? e.name : -1;
-    }).filter(e => e!== -1);
+    }).filter(e => e !== -1);
 
     // niepełnoletni, którzy lubią rybki
-    const t9 = t6.filter(e => e.age <18).map(e =>{
-        let temp = e.favorites.filter(e => e==='rybki');
-        return temp.length >0 ? e : -1;
-    }).filter(e => e!== -1);
+    const t9 = t6.filter(e => e.age < 18).map(e => {
+        let temp = e.favorites.filter(e => e === 'rybki');
+        return temp.length > 0 ? e : -1;
+    }).filter(e => e !== -1);
+
+
+    let tab = [];
+    for (let i = 0; i < 100; i++) {
+        tab.push(Math.random());
+    }
+    const tab2 = tab.reduce((accumulator, value) => accumulator + value);
+    let result = tab2/tab.length;
 
 </script>
 </body>
