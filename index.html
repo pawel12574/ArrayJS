@@ -10,13 +10,30 @@
 <script>
     //zrby sprawdzic funkcje jakie moge wykonac, trzeba spradzic
     // wlasnosc obiekt.__proto__;
-    let tab = [1, 2, 3, 4, 5, 6];
-    tab.push(7);
-    tab = [1, 2, 3, 4, 5, 6];
-    tab.push(6);
-    //var zasieg funkcyjny, mozna redeklarowac
-    //let/const zasieg blokowy, nie hostingowany, nie mozna redeklarowac
-    // typy złozone sa przkazywane przez referencje np array, object
+    const tab = [1, 2, 3, 4, 5];
+    //  const tab2 = tab.reverse();
+    //funkcjatab pozwal mapowac dowolna tablica na nowa
+    const tab3 = tab.map(function (element, index, tab) {
+        return element + index * 10;
+    });
+
+    const tab4 = tab.map((element, index) => {
+        return element * 10
+    });
+
+    const tab5 = tab.map(element => element * 10);// to jest ok, bo jest czytelne
+
+    const tab6 = tab.map(e => e * 10);
+
+    //    (parametry)=> {
+    //        //ciało funkcji
+    //    }
+    //    marametr => {
+    //        //ciało funkcji
+    //    }
+    //
+    //    parametry => true;
+
 </script>
 </body>
 </html>
