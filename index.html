@@ -71,6 +71,7 @@
     //3. sprawdzic czy w tablicy jest alkohol
     //4. wypisanie ludzi, ktorzy lubia alkohol
 
+    //funckje anonimowe
     const t7 = t6.map(function (e, index, tab) {
         console.log('element', e);
         let temp = e.favorites.filter(function (element) {
@@ -80,6 +81,18 @@
     }).filter(function (e) {
         return e !==-1;
     });
+
+    //bez funkcji anonimowych
+    const t8 = t6.map(e => {
+        let temp = e.favorites.filter(e => e==='alkohol');
+        return temp.length > 0 ? e.name : -1;
+    }).filter(e => e!== -1);
+
+    // niepełnoletni, którzy lubią rybki
+    const t9 = t6.filter(e => e.age <18).map(e =>{
+        let temp = e.favorites.filter(e => e==='rybki');
+        return temp.length >0 ? e : -1;
+    }).filter(e => e!== -1);
 
 </script>
 </body>
