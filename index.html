@@ -10,15 +10,20 @@
 <script>
 
     const tab = [1, 2, 3, 4, 5];
-    const tab7 = tab.reduce((accumulator, currentValue) => {
-        console.log('accumulator', accumulator);
-        console.log('current value', currentValue);
-        return accumulator + currentValue;
-    });
+    // nowa tablia, w ktorej znajduja sie elementy wieksze niz 3;
+    const tab8 = tab.filter((element) => element > 3 );
 
-    const tab8 = tab.reduce((accumulator, currentValue) => {accumulator + currentValue });
-    //chce nową zmienną w ktorej bedzie suma nowych elementów;
+    //nowa tablica, która zawiera elementy od najwiekszego
+    const tab9 = tab.sort((element1, element2) => element2 - element1);
 
+    //nowa tablica, która zawiera elementy od najwiekszego
+    const tab10 = tab.sort((element1, element2) => element2 > element1? 1: -1);
+
+
+    tab10.join('-');
+    let a=tab.join('-');
+    a.split('-');
+    a.map((element) =>{ return parseInt(element, 10)});// 10 to system liczbowy
 
 </script>
 </body>
