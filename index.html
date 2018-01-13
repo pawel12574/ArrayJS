@@ -9,21 +9,18 @@
 
 <script>
 
-    const tab = [1, 2, 3, 4, 5];
-    // nowa tablia, w ktorej znajduja sie elementy wieksze niz 3;
-    const tab8 = tab.filter((element) => element > 3 );
-
-    //nowa tablica, która zawiera elementy od najwiekszego
-    const tab9 = tab.sort((element1, element2) => element2 - element1);
-
-    //nowa tablica, która zawiera elementy od najwiekszego
-    const tab10 = tab.sort((element1, element2) => element2 > element1? 1: -1);
+    const t = [[1, 2, 3], [1, 2, 3], [1, 2, 3]];
+//    const t2 = t.map((element) => element.reverse());
 
 
-    tab10.join('-');
-    let a=tab.join('-');
-    a.split('-');
-    a.map((element) =>{ return parseInt(element, 10)});// 10 to system liczbowy
+    //1. iterujemy po tablicy głównej, zeby dostac sie do elementów
+    //2. elementy są tablicami wiec je odwracamy funkcja reverse
+    const t2 = t.map((element) => element.reverse());
+    const t3 = t.map((element) => element.reverse().join('-')).join('-');
+
+    const t3= t.map(function (e){
+        return e.reverse().join('-');
+    }).join('-');
 
 </script>
 </body>
