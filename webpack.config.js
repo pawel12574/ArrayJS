@@ -3,12 +3,10 @@ module.exports = {
     output: {
         filename: "app.js"
     },
+    devtool: "inline-source-map",
     module: {
         rules: [
-            {
-                test: /\.tsx?$/,
-                loader: "ts-loader"
-            }
+            { test: /\.tsx?$/, loader: 'ts-loader' }
         ]
     },
     resolve: {
