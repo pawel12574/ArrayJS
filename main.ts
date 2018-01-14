@@ -22,7 +22,14 @@ function load(url: string){
         })
         xhr.open('GET', url);
         xhr.send();
-    }).map((a) => a.sort((a, b) => a.pages > b.pages));
+    }).retryWhen((errors , limit = 5, delay = 2000)=> {
+        return errors
+            .takeWhile((e ,i) => {
+            console.log(i);
+            return  i< limit;
+            })
+            .delay(delay);
+    })
 }
 function renderBooks(books){
     books.forEach(b => {
@@ -32,7 +39,7 @@ function renderBooks(books){
     })
 
 }
-click.flatMap(e => load('/books-api.json'))
+click.flatMap(e => load('/books-ap.json'))
     .subscribe(
         renderBooks,//(e) => console.log(e),  //next
         (e) => console.log(`error ${e}`), //error
